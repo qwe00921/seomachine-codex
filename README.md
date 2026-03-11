@@ -1,5 +1,15 @@
 # SEO Machine
 
+> Fork Notice
+>
+> This repository is a Codex-adapted fork of the original project:
+> [TheCraigHewitt/seomachine](https://github.com/TheCraigHewitt/seomachine).
+>
+> - Upstream (original): `https://github.com/TheCraigHewitt/seomachine.git`
+> - This fork: adds Codex compatibility (`AGENTS.md`, `CODEX-QUICKSTART.md`) while keeping the original workflow and structure.
+> - To keep bug fixes from upstream, regularly sync:
+>   `git fetch upstream && git merge upstream/main && git push origin main`
+
 A specialized AI workspace for creating long-form, SEO-optimized blog content for any business. This system helps you research, write, analyze, and optimize content that ranks well and serves your target audience.
 
 ## Overview
