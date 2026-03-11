@@ -36,6 +36,8 @@ Fill out these **3 essential files** with your company info:
 
 ## Step 3: Create Your First Article (3 min)
 
+### Option A: Claude Code
+
 ```bash
 # Open in Claude Code
 claude-code .
@@ -50,6 +52,18 @@ claude-code .
 
 # Check /drafts/ for your article + optimization reports
 ```
+
+### Option B: Codex
+
+Use the same slash-style commands in your Codex session (enabled by `AGENTS.md`):
+
+```text
+/research [your topic]
+/write [your topic]
+/optimize drafts/[your-topic]-[YYYY-MM-DD].md
+```
+
+See `CODEX-QUICKSTART.md` for full Codex setup details.
 
 ## That's It! 🎉
 
@@ -105,6 +119,7 @@ You now have:
 ## Need Help?
 
 - Full Documentation: See README.md
+- Codex Guide: See CODEX-QUICKSTART.md
 - Real Example: Check `examples/castos/` directory
 - Issues: https://github.com/[your-username]/seomachine/issues
 

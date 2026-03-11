@@ -1,10 +1,10 @@
 # SEO Machine
 
-A specialized Claude Code workspace for creating long-form, SEO-optimized blog content for any business. This system helps you research, write, analyze, and optimize content that ranks well and serves your target audience.
+A specialized AI workspace for creating long-form, SEO-optimized blog content for any business. This system helps you research, write, analyze, and optimize content that ranks well and serves your target audience.
 
 ## Overview
 
-SEO Machine is built on Claude Code and provides:
+SEO Machine is built around command-driven AI workflows (Claude Code + Codex compatible) and provides:
 - **Custom Commands**: `/research`, `/write`, `/rewrite`, `/analyze-existing`, `/optimize`, `/performance-review`, `/publish-draft`, `/article`, `/priorities`, plus specialized research and landing page commands
 - **Specialized Agents**: Content analyzer, SEO optimization, meta element creation, internal linking, keyword mapping, editor, performance analysis, headline generator, CRO analyst, landing page optimizer
 - **Marketing Skills**: 26 marketing skills for copywriting, CRO, A/B testing, email sequences, pricing strategy, and more
@@ -16,8 +16,10 @@ SEO Machine is built on Claude Code and provides:
 ## Getting Started
 
 ### Prerequisites
-- [Claude Code](https://claude.com/claude-code) installed
-- Anthropic API account
+- One supported agent runtime:
+  - [Claude Code](https://claude.com/claude-code), or
+  - Codex-compatible agent environment (uses `AGENTS.md`)
+- API access for your chosen runtime
 
 ### Installation
 
@@ -39,10 +41,16 @@ This installs:
 - Machine learning (scikit-learn)
 - Web scraping tools (beautifulsoup4)
 
-3. Open in Claude Code:
+3. Open in your preferred runtime:
+
+**Option A: Claude Code**
 ```bash
 claude-code .
 ```
+
+**Option B: Codex**
+- See [CODEX-QUICKSTART.md](CODEX-QUICKSTART.md)
+- Use the same slash-style commands (`/research`, `/write`, etc.) in your Codex session
 
 4. **Customize Context Files** (Important!):
 
@@ -990,6 +998,7 @@ Every article must meet these requirements:
 - Review this README thoroughly
 - Check context files are properly configured
 - Consult [Claude Code documentation](https://docs.claude.com/claude-code)
+- For Codex usage, see [CODEX-QUICKSTART.md](CODEX-QUICKSTART.md) and [AGENTS.md](AGENTS.md)
 
 ### Contributing
 - Report issues via GitHub Issues
@@ -1002,7 +1011,7 @@ Every article must meet these requirements:
 
 ## Credits
 
-Built with [Claude Code](https://claude.com/claude-code) by Anthropic.
+Built for command-driven AI workflows, originally with [Claude Code](https://claude.com/claude-code), now adapted for Codex via `AGENTS.md`.
 
 Originally developed for Castos, now available as an open-source tool for any business to streamline long-form SEO content creation.
 
