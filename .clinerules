@@ -1,0 +1,5 @@
+# Cline Rules
+
+Follow shared instructions from `AI-ASSISTANTS.md`.
+
+Execute slash-style workflow prompts using command specs in `.claude/commands/`.

@@ -6,7 +6,7 @@
 > [TheCraigHewitt/seomachine](https://github.com/TheCraigHewitt/seomachine).
 >
 > - Upstream (original): `https://github.com/TheCraigHewitt/seomachine.git`
-> - This fork: adds Codex compatibility (`AGENTS.md`, `CODEX-QUICKSTART.md`) while keeping the original workflow and structure.
+> - This fork: adds multi-assistant compatibility (`AGENTS.md`, `AI-ASSISTANTS.md`, `CODEX-QUICKSTART.md`) while keeping the original workflow and structure.
 > - To keep bug fixes from upstream, regularly sync:
 >   `git fetch upstream && git merge upstream/main && git push origin main`
 
@@ -14,7 +14,7 @@ A specialized AI workspace for creating long-form, SEO-optimized blog content fo
 
 ## Overview
 
-SEO Machine is built around command-driven AI workflows (Claude Code + Codex compatible) and provides:
+SEO Machine is built around command-driven AI workflows (Claude Code + Codex + other assistant runtimes) and provides:
 - **Custom Commands**: `/research`, `/write`, `/rewrite`, `/analyze-existing`, `/optimize`, `/performance-review`, `/publish-draft`, `/article`, `/priorities`, plus specialized research and landing page commands
 - **Specialized Agents**: Content analyzer, SEO optimization, meta element creation, internal linking, keyword mapping, editor, performance analysis, headline generator, CRO analyst, landing page optimizer
 - **Marketing Skills**: 26 marketing skills for copywriting, CRO, A/B testing, email sequences, pricing strategy, and more
@@ -23,12 +23,27 @@ SEO Machine is built around command-driven AI workflows (Claude Code + Codex com
 - **Context-Driven**: Brand voice, style guide, SEO guidelines, and examples guide all content
 - **Workflow Organization**: Structured directories for topics, research, drafts, and published content
 
+## Multi-Agent Support
+
+This repo includes compatibility files for multiple assistants:
+
+- Claude Code: `CLAUDE.md`
+- Codex: `AGENTS.md` + `CODEX-QUICKSTART.md`
+- Gemini: `GEMINI.md`
+- Cursor: `.cursorrules`
+- Windsurf: `.windsurfrules`
+- Cline: `.clinerules`
+- GitHub Copilot: `.github/copilot-instructions.md`
+
+Shared rules for all of them are centralized in `AI-ASSISTANTS.md`.
+
 ## Getting Started
 
 ### Prerequisites
 - One supported agent runtime:
   - [Claude Code](https://claude.com/claude-code), or
-  - Codex-compatible agent environment (uses `AGENTS.md`)
+  - Codex-compatible environment (`AGENTS.md`), or
+  - Gemini/Cursor/Windsurf/Cline/Copilot with this repo's instruction files
 - API access for your chosen runtime
 
 ### Installation

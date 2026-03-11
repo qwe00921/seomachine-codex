@@ -2,6 +2,8 @@
 
 This repository was originally built for Claude Code slash commands. This file adapts the same workflow for Codex-style agents.
 
+For shared rules across other assistant runtimes, see `AI-ASSISTANTS.md`.
+
 ## Core Goal
 
 Preserve the existing command-driven content workflow (`/research`, `/write`, `/optimize`, etc.) while running inside Codex.

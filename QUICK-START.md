@@ -120,6 +120,7 @@ You now have:
 
 - Full Documentation: See README.md
 - Codex Guide: See CODEX-QUICKSTART.md
+- Multi-Assistant Rules: See AI-ASSISTANTS.md
 - Real Example: Check `examples/castos/` directory
 - Issues: https://github.com/[your-username]/seomachine/issues
 

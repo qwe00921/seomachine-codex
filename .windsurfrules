@@ -1,0 +1,5 @@
+# Windsurf Rules
+
+Follow repository assistant behavior in `AI-ASSISTANTS.md`.
+
+Use `.claude/commands/` and `.claude/agents/` as the source of truth for workflow execution.

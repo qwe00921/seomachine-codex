@@ -1,0 +1,5 @@
+# Cursor Rules
+
+Follow the shared multi-assistant instructions in `AI-ASSISTANTS.md`.
+
+When users issue slash-style prompts (for example `/research topic`), treat them as workflow commands and execute according to `.claude/commands/`.
