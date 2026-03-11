@@ -16,12 +16,23 @@
 
 A specialized AI workspace for creating long-form, SEO-optimized blog content for any business. This system helps you research, write, analyze, and optimize content that ranks well and serves your target audience.
 
+## Quick Navigation
+
+- [Getting Started](#getting-started)
+- [Multi-Agent Support](#multi-agent-support)
+- [Workflows](#workflows)
+- [Commands Reference](#commands-reference)
+- [Data Sources](#data-sources)
+- [Directory Structure](#directory-structure)
+- [Troubleshooting](#troubleshooting)
+- [Support and Contributions](#support-and-contributions)
+
 ## Overview
 
 SEO Machine is built around command-driven AI workflows (Claude Code + Codex + other assistant runtimes) and provides:
-- **Custom Commands**: `/research`, `/write`, `/rewrite`, `/analyze-existing`, `/optimize`, `/performance-review`, `/publish-draft`, `/article`, `/priorities`, plus specialized research and landing page commands
+- **Custom Commands**: `/research`, `/write`, `/rewrite`, `/analyze-existing`, `/optimize`, `/performance-review`, `/publish-draft`, `/article`, `/cluster`, `/content-calendar`, `/priorities`, `/scrub`, plus specialized research and landing page commands
 - **Specialized Agents**: Content analyzer, SEO optimization, meta element creation, internal linking, keyword mapping, editor, performance analysis, headline generator, CRO analyst, landing page optimizer
-- **Marketing Skills**: 26 marketing skills for copywriting, CRO, A/B testing, email sequences, pricing strategy, and more
+- **Marketing Skills**: 25 marketing skills for copywriting, CRO, A/B testing, email sequences, pricing strategy, and more
 - **Advanced SEO Analysis**: Search intent detection, keyword density & clustering, content length comparison, readability scoring, SEO quality rating (0-100)
 - **Data Integrations**: Google Analytics 4, Google Search Console, DataForSEO for real-time performance insights
 - **Context-Driven**: Brand voice, style guide, SEO guidelines, and examples guide all content
@@ -56,8 +67,8 @@ Shared rules for all runtimes are centralized in `AI-ASSISTANTS.md`.
 
 1. Clone this repository:
 ```bash
-git clone https://github.com/[your-username]/seomachine.git
-cd seomachine
+git clone https://github.com/qwe00921/seomachine-codex.git
+cd seomachine-codex
 ```
 
 2. Install Python dependencies for analysis modules:
@@ -72,7 +83,19 @@ This installs:
 - Machine learning (scikit-learn)
 - Web scraping tools (beautifulsoup4)
 
-3. Open in your preferred runtime:
+3. Create environment files (recommended before running data-enabled commands):
+
+```bash
+# Root env file (used by WordPress publisher and root scripts)
+cp .env.example .env
+
+# Data source env file (used by analytics modules)
+cp .env.example data_sources/config/.env
+```
+
+Then fill in required credentials in both files for your use case.
+
+4. Open in your preferred runtime:
 
 **Option A: Claude Code**
 - Command:
@@ -106,7 +129,7 @@ This installs:
 - Open this repository in VS Code / GitHub coding workflows with Copilot.
 - Instructions: `.github/copilot-instructions.md` and `AI-ASSISTANTS.md`
 
-4. **Customize Context Files** (Important!):
+5. **Customize Context Files** (Important!):
 
    All context files are provided as templates. Fill them out with your company's information:
 
@@ -315,6 +338,16 @@ Simplified article creation workflow.
 
 ---
 
+### `/cluster [topic]`
+Build a complete topic-cluster strategy (pillar + supporting content + internal linking map).
+
+---
+
+### `/content-calendar`
+Generate a monthly publishing plan with priorities and sequencing.
+
+---
+
 ### `/priorities`
 Content prioritization matrix using analytics data to identify highest-impact content tasks.
 
@@ -351,7 +384,7 @@ Remove AI watermarks and patterns from content (em-dashes, filler phrases, robot
 
 Specialized agents that automatically analyze content and provide expert recommendations.
 
-### Content Analyzer (NEW!)
+### Content Analyzer
 **Purpose**: Comprehensive, data-driven content analysis using 5 specialized modules
 
 **Analyzes**:
@@ -515,13 +548,13 @@ Specialized agents that automatically analyze content and provide expert recomme
 
 ## Marketing Skills
 
-SEO Machine includes 26 marketing skills accessible as slash commands:
+SEO Machine includes 25 marketing skills accessible as slash commands:
 
 | Category | Skills |
 |----------|--------|
 | **Copywriting** | `/copywriting`, `/copy-editing` |
 | **CRO** | `/page-cro`, `/form-cro`, `/signup-flow-cro`, `/onboarding-cro`, `/popup-cro`, `/paywall-upgrade-cro` |
-| **Strategy** | `/content-strategy`, `/pricing-strategy`, `/launch-strategy`, `/marketing-ideas` |
+| **Strategy** | `/content-strategy`, `/pricing-strategy`, `/launch-strategy`, `/marketing-ideas`, `/product-marketing-context` |
 | **Channels** | `/email-sequence`, `/social-content`, `/paid-ads` |
 | **SEO** | `/seo-audit`, `/schema-markup`, `/programmatic-seo`, `/competitor-alternatives` |
 | **Analytics** | `/analytics-tracking`, `/ab-test-setup` |
@@ -551,7 +584,7 @@ SEO Machine integrates with real-time data sources to inform content strategy:
 - Keyword metrics
 - Competitor gap analysis
 
-### Advanced SEO Analysis Modules (NEW!)
+### Advanced SEO Analysis Modules
 
 SEO Machine includes 5 specialized Python modules for comprehensive content analysis:
 
@@ -644,9 +677,9 @@ Publishing uses the WordPress REST API with a custom MU-plugin that exposes Yoas
 2. Add `wordpress/functions-snippet.php` to your theme's functions.php
 3. Configure WordPress credentials in `.env`:
    ```
-   WP_URL=https://yoursite.com
-   WP_USERNAME=your_username
-   WP_APP_PASSWORD=your_application_password
+   WORDPRESS_URL=https://yoursite.com
+   WORDPRESS_USERNAME=your_username
+   WORDPRESS_APP_PASSWORD=your_application_password
    ```
 
 See `wordpress/README.md` for detailed setup instructions.
@@ -1080,22 +1113,29 @@ Every article must meet these requirements:
 - **Solution**: Add your unique advantages to `brand-voice.md` and `features.md`
 - **Solution**: Reference specific differentiation angles in `/research` command
 
-## Support & Contributions
+## Support and Contributions
 
 ### Getting Help
 - Review this README thoroughly
 - Check context files are properly configured
 - Consult [Claude Code documentation](https://docs.claude.com/claude-code)
 - For Codex usage, see [CODEX-QUICKSTART.md](CODEX-QUICKSTART.md) and [AGENTS.md](AGENTS.md)
+- For Gemini/Cursor/Windsurf/Cline/Copilot, follow `AI-ASSISTANTS.md` plus each runtime-specific instructions file
+- Upstream project: [TheCraigHewitt/seomachine](https://github.com/TheCraigHewitt/seomachine)
+- Fork issues: [qwe00921/seomachine-codex issues](https://github.com/qwe00921/seomachine-codex/issues)
+- Upstream issues: [TheCraigHewitt/seomachine issues](https://github.com/TheCraigHewitt/seomachine/issues)
 
 ### Contributing
-- Report issues via GitHub Issues
+- Report fork-specific issues via this repository's issues page
+- Report upstream framework/workflow issues to the upstream repository
 - Suggest improvements to commands or agents
 - Share successful workflows or tips
+- See [CONTRIBUTING.md](CONTRIBUTING.md) for contribution guidelines
 
 ## License
 
-[Add your license information]
+This project is distributed under the [MIT License](LICENSE).  
+As a fork, original upstream licensing and attribution are preserved.
 
 ## Credits
 
