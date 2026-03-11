@@ -65,6 +65,31 @@ Use the same slash-style commands in your Codex session (enabled by `AGENTS.md`)
 
 See `CODEX-QUICKSTART.md` for full Codex setup details.
 
+### Option C: Gemini
+
+- Open the repo in your Gemini coding environment.
+- Follow `GEMINI.md` and `AI-ASSISTANTS.md`.
+
+### Option D: Cursor
+
+- Open this folder in Cursor.
+- Follow `.cursorrules` and `AI-ASSISTANTS.md`.
+
+### Option E: Windsurf
+
+- Open this folder in Windsurf.
+- Follow `.windsurfrules` and `AI-ASSISTANTS.md`.
+
+### Option F: Cline
+
+- Open this folder with Cline enabled.
+- Follow `.clinerules` and `AI-ASSISTANTS.md`.
+
+### Option G: GitHub Copilot
+
+- Open the repository in VS Code / GitHub coding workflows with Copilot.
+- Follow `.github/copilot-instructions.md` and `AI-ASSISTANTS.md`.
+
 ## That's It! 🎉
 
 You now have:

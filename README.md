@@ -31,15 +31,17 @@ SEO Machine is built around command-driven AI workflows (Claude Code + Codex + o
 
 This repo includes compatibility files for multiple assistants:
 
-- Claude Code: `CLAUDE.md`
-- Codex: `AGENTS.md` + `CODEX-QUICKSTART.md`
-- Gemini: `GEMINI.md`
-- Cursor: `.cursorrules`
-- Windsurf: `.windsurfrules`
-- Cline: `.clinerules`
-- GitHub Copilot: `.github/copilot-instructions.md`
+| Runtime | Primary Instruction File(s) | Setup Notes |
+|---------|------------------------------|-------------|
+| Claude Code | `CLAUDE.md` | Native slash-command workflow source |
+| Codex | `AGENTS.md`, `CODEX-QUICKSTART.md` | Codex compatibility layer + quick start |
+| Gemini | `GEMINI.md` | Uses shared rules from `AI-ASSISTANTS.md` |
+| Cursor | `.cursorrules` | Uses shared rules from `AI-ASSISTANTS.md` |
+| Windsurf | `.windsurfrules` | Uses shared rules from `AI-ASSISTANTS.md` |
+| Cline | `.clinerules` | Uses shared rules from `AI-ASSISTANTS.md` |
+| GitHub Copilot | `.github/copilot-instructions.md` | Uses shared rules from `AI-ASSISTANTS.md` |
 
-Shared rules for all of them are centralized in `AI-ASSISTANTS.md`.
+Shared rules for all runtimes are centralized in `AI-ASSISTANTS.md`.
 
 ## Getting Started
 
@@ -73,13 +75,36 @@ This installs:
 3. Open in your preferred runtime:
 
 **Option A: Claude Code**
-```bash
-claude-code .
-```
+- Command:
+  ```bash
+  claude-code .
+  ```
+- Instructions: `CLAUDE.md`
 
 **Option B: Codex**
-- See [CODEX-QUICKSTART.md](CODEX-QUICKSTART.md)
-- Use the same slash-style commands (`/research`, `/write`, etc.) in your Codex session
+- Start a Codex session at the repository root.
+- Instructions: `AGENTS.md`
+- Quick start: [CODEX-QUICKSTART.md](CODEX-QUICKSTART.md)
+
+**Option C: Gemini**
+- Open the repository in your Gemini coding environment.
+- Instructions: `GEMINI.md` and `AI-ASSISTANTS.md`
+
+**Option D: Cursor**
+- Open this folder in Cursor.
+- Instructions: `.cursorrules` and `AI-ASSISTANTS.md`
+
+**Option E: Windsurf**
+- Open this folder in Windsurf.
+- Instructions: `.windsurfrules` and `AI-ASSISTANTS.md`
+
+**Option F: Cline**
+- Open this folder in your editor with Cline enabled.
+- Instructions: `.clinerules` and `AI-ASSISTANTS.md`
+
+**Option G: GitHub Copilot**
+- Open this repository in VS Code / GitHub coding workflows with Copilot.
+- Instructions: `.github/copilot-instructions.md` and `AI-ASSISTANTS.md`
 
 4. **Customize Context Files** (Important!):
 
@@ -632,93 +657,127 @@ See `data_sources/README.md` for analytics setup instructions.
 
 ```
 seomachine/
+├── .github/
+│   └── copilot-instructions.md  # Copilot repository instructions
 ├── .claude/
 │   ├── commands/          # Custom workflow commands
 │   │   ├── analyze-existing.md
-│   │   ├── research.md
-│   │   ├── write.md
-│   │   ├── rewrite.md
-│   │   ├── optimize.md
-│   │   ├── scrub.md
-│   │   ├── performance-review.md
-│   │   ├── publish-draft.md
 │   │   ├── article.md
-│   │   ├── priorities.md
-│   │   ├── research-serp.md
-│   │   ├── research-gaps.md
-│   │   ├── research-trending.md
-│   │   ├── research-performance.md
-│   │   ├── research-topics.md
-│   │   ├── landing-write.md
+│   │   ├── cluster.md
+│   │   ├── content-calendar.md
 │   │   ├── landing-audit.md
-│   │   ├── landing-research.md
 │   │   ├── landing-competitor.md
-│   │   └── landing-publish.md
+│   │   ├── landing-publish.md
+│   │   ├── landing-research.md
+│   │   ├── landing-write.md
+│   │   ├── optimize.md
+│   │   ├── performance-review.md
+│   │   ├── priorities.md
+│   │   ├── publish-draft.md
+│   │   ├── research-gaps.md
+│   │   ├── research-performance.md
+│   │   ├── research.md
+│   │   ├── research-serp.md
+│   │   ├── research-topics.md
+│   │   ├── research-trending.md
+│   │   ├── rewrite.md
+│   │   ├── scrub.md
+│   │   └── write.md
 │   ├── agents/            # Specialized analysis agents
 │   │   ├── content-analyzer.md
-│   │   ├── seo-optimizer.md
-│   │   ├── meta-creator.md
+│   │   ├── cluster-strategist.md
+│   │   ├── cro-analyst.md
+│   │   ├── editor.md
+│   │   ├── headline-generator.md
 │   │   ├── internal-linker.md
 │   │   ├── keyword-mapper.md
-│   │   ├── editor.md
+│   │   ├── landing-page-optimizer.md
+│   │   ├── meta-creator.md
 │   │   ├── performance.md
-│   │   ├── headline-generator.md
-│   │   ├── cro-analyst.md
-│   │   └── landing-page-optimizer.md
-│   └── skills/            # 26 marketing skills
-├── data_sources/          # Analytics integrations
-│   ├── modules/          # Python analysis modules
-│   │   ├── google_analytics.py
-│   │   ├── google_search_console.py
-│   │   ├── dataforseo.py
-│   │   ├── data_aggregator.py
-│   │   ├── search_intent_analyzer.py
-│   │   ├── keyword_analyzer.py
-│   │   ├── seo_quality_rater.py
-│   │   ├── content_length_comparator.py
-│   │   ├── readability_scorer.py
-│   │   ├── opportunity_scorer.py
-│   │   ├── content_scorer.py
-│   │   ├── engagement_analyzer.py
-│   │   ├── social_research_aggregator.py
-│   │   ├── competitor_gap_analyzer.py
-│   │   ├── article_planner.py
-│   │   ├── section_writer.py
-│   │   ├── wordpress_publisher.py
+│   │   └── seo-optimizer.md
+│   └── skills/            # Marketing skills library
+├── .clinerules            # Cline instructions
+├── .cursorrules           # Cursor instructions
+├── .windsurfrules         # Windsurf instructions
+├── AGENTS.md              # Codex instructions
+├── AI-ASSISTANTS.md       # Shared assistant rules
+├── CLAUDE.md              # Claude Code instructions
+├── GEMINI.md              # Gemini instructions
+├── CODEX-QUICKSTART.md    # Codex setup guide
+├── QUICK-START.md
+├── README.md
+├── CONTRIBUTING.md
+├── LICENSE
+├── .env.example
+├── .gitignore
+├── NEXT-STEPS.md
+├── ToDo.md
+├── data-sources-setup.md
+├── config/                # Configuration files
+│   └── competitors.example.json
+├── context/               # Brand, style, SEO and linking context
+│   ├── brand-voice.md
+│   ├── competitor-analysis.md
+│   ├── cro-best-practices.md
+│   ├── features.md
+│   ├── internal-links-map.md
+│   ├── seo-guidelines.md
+│   ├── style-guide.md
+│   ├── target-keywords.md
+│   └── writing-examples.md
+├── data_sources/          # Analytics and analysis integrations
+│   ├── cache/
+│   ├── config/
+│   ├── modules/
 │   │   ├── above_fold_analyzer.py
+│   │   ├── article_planner.py
+│   │   ├── competitor_gap_analyzer.py
+│   │   ├── content_length_comparator.py
+│   │   ├── content_scorer.py
+│   │   ├── content_scrubber.py
 │   │   ├── cro_checker.py
 │   │   ├── cta_analyzer.py
+│   │   ├── data_aggregator.py
+│   │   ├── dataforseo.py
+│   │   ├── engagement_analyzer.py
+│   │   ├── google_analytics.py
+│   │   ├── google_search_console.py
+│   │   ├── keyword_analyzer.py
 │   │   ├── landing_page_scorer.py
 │   │   ├── landing_performance.py
-│   │   └── trust_signal_analyzer.py
-│   ├── config/           # API credentials (not in git)
-│   ├── utils/            # Helper functions
-│   ├── cache/            # Cached API responses
-│   └── README.md         # Setup instructions
-├── config/                # Configuration files
-│   └── competitors.example.json  # Competitor config template
-├── context/               # Configuration and guidelines
-│   ├── brand-voice.md
-│   ├── writing-examples.md
-│   ├── style-guide.md
-│   ├── seo-guidelines.md
-│   ├── target-keywords.md
-│   ├── internal-links-map.md
-│   ├── competitor-analysis.md
-│   └── cro-best-practices.md
-├── wordpress/             # WordPress integration
-│   ├── seo-machine-yoast-rest.php
+│   │   ├── opportunity_scorer.py
+│   │   ├── readability_scorer.py
+│   │   ├── search_intent_analyzer.py
+│   │   ├── section_writer.py
+│   │   ├── seo_quality_rater.py
+│   │   ├── social_research_aggregator.py
+│   │   ├── trust_signal_analyzer.py
+│   │   └── wordpress_publisher.py
+│   ├── README.md
+│   └── requirements.txt
+├── examples/
+│   └── castos/
+├── output/
+├── topics/
+├── research/
+├── drafts/
+├── rewrites/
+├── published/
+├── wordpress/
 │   ├── functions-snippet.php
-│   └── README.md
-├── topics/                # Raw topic ideas
-├── research/              # Research briefs and analysis reports
-├── drafts/                # Work in progress articles
-├── review-required/       # Articles pending review
-├── published/             # Final versions ready to publish
-├── rewrites/              # Updated existing content
-├── landing-pages/         # Landing page content
-├── audits/                # Audit reports
-└── README.md              # This file
+│   ├── README.md
+│   └── seo-machine-yoast-rest.php
+├── research_competitor_gaps.py
+├── research_performance_matrix.py
+├── research_priorities_comprehensive.py
+├── research_quick_wins.py
+├── research_serp_analysis.py
+├── research_topic_clusters.py
+├── research_trending.py
+├── seo_baseline_analysis.py
+├── seo_bofu_rankings.py
+├── seo_competitor_analysis.py
+└── test_dataforseo.py
 ```
 
 ## Context Files (Important!)
