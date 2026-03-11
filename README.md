@@ -1,12 +1,16 @@
 # SEO Machine
 
-> Fork Notice
+> Fork & Attribution Notice
 >
-> This repository is a Codex-adapted fork of the original project:
+> This repository is an independent fork of the original project:
 > [TheCraigHewitt/seomachine](https://github.com/TheCraigHewitt/seomachine).
 >
 > - Upstream (original): `https://github.com/TheCraigHewitt/seomachine.git`
 > - This fork: adds multi-assistant compatibility (`AGENTS.md`, `AI-ASSISTANTS.md`, `CODEX-QUICKSTART.md`) while keeping the original workflow and structure.
+> - This fork is not officially affiliated with, endorsed by, or maintained by the upstream authors.
+> - Original authorship and project credit belong to the upstream repository and contributors.
+> - The upstream project license continues to apply to this fork.
+> - For upstream issues/features, use the upstream issue tracker. For fork-specific changes, use this fork's issue tracker.
 > - To keep bug fixes from upstream, regularly sync:
 >   `git fetch upstream && git merge upstream/main && git push origin main`
 
